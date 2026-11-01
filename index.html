@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Blocca is a creative VR experience for building, arranging, and coloring blocks in VR and Mixed Reality.">
+<meta name="theme-color" content="#ffffff">
+<title>Blocca — Create freely in VR</title>
+<style>
+:root{--ink:#202124;--muted:#6b7280;--line:#eceef1;--soft:#f8f9fb;--pink:#ff6f91;--yellow:#ffc857;--blue:#65b9ff;--green:#70d6a5;--purple:#a78bfa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+.wrap{width:min(1080px,calc(100% - 40px));margin:auto}a{color:inherit}
+header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;font-size:1.15rem;font-weight:800;letter-spacing:-.04em;text-decoration:none}
+.mark{display:grid;grid-template-columns:repeat(2,12px);gap:3px;transform:rotate(-8deg)}.mark i{width:12px;height:12px;border-radius:3px}.mark i:nth-child(1){background:var(--pink)}.mark i:nth-child(2){background:var(--yellow)}.mark i:nth-child(3){background:var(--blue)}.mark i:nth-child(4){background:var(--green)}
+nav{display:flex;gap:24px;font-size:.9rem;color:var(--muted)}nav a{text-decoration:none}
+.hero{text-align:center;padding:94px 0 78px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.dots{display:inline-flex;gap:4px}.dots i{width:7px;height:7px;border-radius:50%}
+h1{margin:24px 0 12px;font-size:clamp(3.4rem,10vw,7rem);line-height:.98;letter-spacing:-.085em}
+.gradient{background:linear-gradient(95deg,#ff6f91 5%,#f5b942 35%,#58b8ee 68%,#67c99a 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:610px;margin:22px auto 0;color:var(--muted);font-size:clamp(1rem,2.2vw,1.2rem)}.note{margin-top:30px;font-size:.83rem;color:#9298a2}
+.showcase{min-height:245px;margin:auto;border:1px solid var(--line);border-radius:28px;background:radial-gradient(circle at 18% 30%,rgba(255,111,145,.12),transparent 24%),radial-gradient(circle at 78% 28%,rgba(101,185,255,.14),transparent 25%),radial-gradient(circle at 50% 95%,rgba(112,214,165,.13),transparent 30%),#fbfcfd;display:grid;place-items:center;overflow:hidden}
+.blocks{display:flex;align-items:end;gap:9px;transform:perspective(500px) rotateX(8deg) rotateZ(-5deg)}.cube{width:clamp(48px,8vw,82px);aspect-ratio:1;border-radius:13px;box-shadow:inset -8px -9px 0 rgba(0,0,0,.07),0 14px 28px rgba(30,40,60,.08)}.cube:nth-child(1){background:var(--pink);transform:translateY(-12px)}.cube:nth-child(2){background:var(--yellow);transform:translateY(-58px)}.cube:nth-child(3){background:var(--blue);transform:translateY(-12px)}.cube:nth-child(4){background:var(--green);transform:translateY(-91px)}.cube:nth-child(5){background:var(--purple);transform:translateY(-12px)}
+section{padding:76px 0}.head{max-width:620px;margin-bottom:30px}.kicker{color:#9aa0a9;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}h2{margin:8px 0 10px;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;letter-spacing:-.055em}.head p,.feature p,.about p,.contact p{color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{padding:24px;border:1px solid var(--line);border-radius:18px}.ico{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:1.1rem;background:#fff0f3}.feature:nth-child(2) .ico{background:#edf7ff}.feature:nth-child(3) .ico{background:#effaf4}h3{margin:16px 0 6px;font-size:1.05rem}.feature p{margin:0;font-size:.92rem}
+.about{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.mode-list{display:grid;gap:12px}.mode{display:flex;gap:14px;align-items:center;padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:15px}.mode-dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}.mode strong{display:block}.mode span:last-child{color:var(--muted);font-size:.88rem}
+.contact{text-align:center}.contact-link{display:inline-block;margin-top:12px;padding:12px 20px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:650}.contact-link:hover{background:var(--soft)}
+footer{padding:25px 0 34px;border-top:1px solid var(--line);color:#9298a2;font-size:.83rem}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}footer a{color:var(--muted);text-decoration:none}
+@media(max-width:700px){.wrap{width:calc(100% - 30px)}header{align-items:flex-start}nav{gap:13px;font-size:.82rem}.hero{padding:70px 0 58px}.showcase{min-height:190px;border-radius:20px}.features,.about-inner{grid-template-columns:1fr}.about-inner{gap:24px}section{padding:58px 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="brand" href="#" aria-label="Blocca home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>blocca</span></a>
+<nav aria-label="Main navigation"><a href="#about">About</a><a href="#features">Features</a><a href="#contact">Contact</a></nav>
+</header>
+<main>
+<section class="hero">
+<div class="eyebrow"><span class="dots" aria-hidden="true"><i style="background:var(--pink)"></i><i style="background:var(--yellow)"></i><i style="background:var(--blue)"></i><i style="background:var(--green)"></i></span>A creative VR experience</div>
+<h1><span class="gradient">Blocca</span></h1>
+<p class="lead">Create freely in VR. Build, arrange, and color blocks in your own immersive space.</p>
+<p class="note">Make space for your imagination.</p>
+<div class="showcase" role="img" aria-label="Abstract arrangement of colorful blocks"><div class="blocks" aria-hidden="true"><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div></div></div>
+</section>
+<section id="features">
+<div class="head"><div class="kicker">Create your way</div><h2>Simple tools. Open possibilities.</h2><p>Blocca gives you a playful space to experiment with shapes, colors, and ideas.</p></div>
+<div class="features">
+<article class="feature"><div class="ico" aria-hidden="true">▦</div><h3>Build with blocks</h3><p>Place and arrange blocks to bring your ideas into three-dimensional space.</p></article>
+<article class="feature"><div class="ico" aria-hidden="true">◉</div><h3>Make it colorful</h3><p>Choose colors and give your creations their own character.</p></article>
+<article class="feature"><div class="ico" aria-hidden="true">◇</div><h3>VR and Mixed Reality</h3><p>Switch between an immersive virtual environment and Mixed Reality.</p></article>
+</div>
+</section>
+<section class="about" id="about"><div class="about-inner">
+<div><div class="kicker">About Blocca</div><h2>Your space to create.</h2><p>Blocca is a single-user creative experience for Meta Quest. Use your Touch controllers to move around your workspace, build with blocks, and explore your own ideas.</p><p>There is no set way to create. Start with a simple shape, experiment with color, and see where your imagination takes you.</p></div>
+<div class="mode-list">
+<div class="mode"><span class="mode-dot" style="background:var(--purple)"></span><div><strong>Virtual Reality</strong><span>Create in an immersive virtual space.</span></div></div>
+<div class="mode"><span class="mode-dot" style="background:var(--green)"></span><div><strong>Mixed Reality</strong><span>Bring your creative experience into your surroundings.</span></div></div>
+<div class="mode"><span class="mode-dot" style="background:var(--yellow)"></span><div><strong>Local saving</strong><span>Your creations are saved on your device.</span></div></div>
+</div></div></section>
+<section class="contact" id="contact"><div class="kicker">Get in touch</div><h2>Questions about Blocca?</h2><p>For support or other inquiries, please contact:</p>
+<!-- Replace the placeholder email before publishing. -->
+<a class="contact-link" href="mailto:YOUR_SUPPORT_EMAIL">1ichi1.work@gmail.com</a>
+</section>
+</main>
+<footer><div class="foot"><span>© 2026 Blocca</span><span><!-- Replace with your published privacy policy URL. --><a href="https://1ichiprogram.github.io/blocca-privacy/blocca-privacy-policy.html">Privacy Policy</a></span></div></footer>
+</div>
+</body>
+</html>
